@@ -86,7 +86,13 @@ p.gros-margin-bottom,
       -o-transform: rotate(45deg);
 }
 
-#chartdiv {background: #111111;color:#ffffff;	
+#chartdiv {background: #DDDDDD;color:#ffffff;	
+	width		: 100%;
+	height		: 500px;
+	font-size	: 2em;
+}
+
+#chartdiv2 {background: #DDDDDD;color:#ffffff;	
 	width		: 100%;
 	height		: 500px;
 	font-size	: 2em;

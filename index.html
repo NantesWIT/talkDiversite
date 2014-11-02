@@ -35,8 +35,9 @@
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 		<script type="text/javascript" src="js/chart/amcharts.js"></script>
+		<script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
 		<script type="text/javascript" src="js/chart/pie.js"></script>
-		<script type="text/javascript" src="js/chart/dark.js"></script>
+		<script type="text/javascript" src="js/chart/light.js"></script>
 
 	</head>
 
@@ -118,7 +119,7 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 					Reveal.addEventListener( 'discriminations', function() {
 					    var chart = AmCharts.makeChart("chartdiv", {
 					    "type": "pie",
-						"theme": "dark",
+						"theme": "light",
 					    "dataProvider": [
 						{
 						        "raison": "Le Sexe",
@@ -157,6 +158,129 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 				<section data-background="#12ADB9" >
 					<h1 class="titre-transition">Pourquoi ?</h1>
 <img src="img/pourquoi.jpg"/>
+				</section>
+				
+				<section>
+					<h2 class="pink uppercase">Au début...</h2>
+					<ul class="blue">
+						<li>Ada Lovelace
+						<li><font class="pink">Majorité de femmes</font> (clavier => pas un métier d'homme)
+						<li><font class="pink">Personal computer</font> : inégalité d'accès puis dégradation progressive de la situation
+						<li>Carrières dans la technique de moins en moins longues
+					</ul>
+					<aside class="notes">
+						<ul class="blue">
+							<li>De nombreuses femmes dans l'histoire de l'info (Grete Hermann, Grace Hopper, Jean Bartik...)
+							<li>
+						</ul>
+					</aside>
+				</section>
+				
+				<section data-state="jeunisme">
+				<div id="chartdiv2"></div>
+					<script type="text/javascript">
+					Reveal.addEventListener( 'jeunisme', function() {
+					    var chart = AmCharts.makeChart("chartdiv2", {
+						"type": "serial",
+						"theme": "light",
+						"legend": {
+							"horizontalGap": 10,
+							"maxColumns": 1,
+							"position": "right",
+							"useGraphSettings": true,
+							"markerSize": 10
+						},
+						"dataProvider": [{
+							"year": 2011,
+							"0-1": 21,
+							"2-5": 37,
+							"6-10": 25,
+							"10+": 16,
+							"NSP": 1,
+						}, {
+							"year": 2012,
+							"0-1": 33,
+							"2-5": 37,
+							"6-10": 17,
+							"10+": 13,
+							"NSP": 0,
+						}, {
+							"year": 2013,
+							"0-1": 42,
+							"2-5": 32,
+							"6-10": 14,
+							"10+": 12,
+							"NSP": 0,
+						}, {
+							"year": "Tous secteurs (2013)",
+							"0-1": 23,
+							"2-5": 28,
+							"6-10": 23,
+							"10+": 26,
+							"NSP": 0,
+						}],
+						"valueAxes": [{
+							"stackType": "regular",
+							"axisAlpha": 0,
+							"gridAlpha": 0
+						}],
+						"graphs": [{
+							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+							"fillAlphas": 0.8,
+							"labelText": "[[value]]",
+							"lineAlpha": 0.3,
+							"title": "0 à 1 an",
+							"type": "column",
+							"color": "#000000",
+							"valueField": "0-1"
+						}, {
+							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+							"fillAlphas": 0.8,
+							"labelText": "[[value]]",
+							"lineAlpha": 0.3,
+							"title": "2 à 5 ans",
+							"type": "column",
+							"color": "#000000",
+							"valueField": "2-5"
+						}, {
+							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+							"fillAlphas": 0.8,
+							"labelText": "[[value]]",
+							"lineAlpha": 0.3,
+							"title": "6 à 10 ans",
+							"type": "column",
+							"color": "#000000",
+							"valueField": "6-10"
+						}, {
+							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+							"fillAlphas": 0.8,
+							"labelText": "[[value]]",
+							"lineAlpha": 0.3,
+							"title": "Plus de 10 ans",
+							"type": "column",
+							"color": "#000000",
+							"valueField": "10+"
+						}, {
+							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+							"fillAlphas": 0.8,
+							"labelText": "[[value]]",
+							"lineAlpha": 0.3,
+							"title": "Ne se prononce pas",
+							"type": "column",
+							"color": "#000000",
+							"valueField": "NSP"
+						}],
+						"categoryField": "year",
+						"categoryAxis": {
+							"gridPosition": "start",
+							"axisAlpha": 0,
+							"gridAlpha": 0,
+							"position": "left"
+						}
+					});
+					}, false );
+					
+					</script>
 				</section>
 				
 				<section>

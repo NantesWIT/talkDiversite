@@ -30,21 +30,21 @@ p.gros-margin-bottom,
 }
 
 .reveal .slides .pink{
-	color: #ec008c;	
+	color: #FE2E64;	
 }
 
 .reveal .slides .pink-fonce{
-	color: #9F1065;	
+	color: #FF0040;	
 }
 
 .reveal .slides h1.titre-transition{
-	color: #9F1065;		
+	color: #FF0040;		
 	font-size: 90px;
 	text-transform: uppercase;
 }
 
 .reveal .slides .blue{
-	color: rgb(18, 172, 239);
+	color: #D8D8D8	;
 }
 
 .reveal .slides section img{

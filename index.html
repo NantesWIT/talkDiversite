@@ -38,24 +38,76 @@
 		<script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
 		<script type="text/javascript" src="js/chart/pie.js"></script>
 		<script type="text/javascript" src="js/chart/light.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+		<script type="text/javascript">
+		$(function () {
+		    $('#chartDiv2').highcharts({
+		        chart: {
+		            type: 'column'
+		        },
+		        title: {
+		            text: 'Recrutement et jeunisme'
+		        },
+		        xAxis: {
+		            categories: ['2011', '2012', '2013', 'Tous secteurs (2013)']
+		        },
+		        yAxis: {
+		            min: 0,
+		            title: {
+		                text: 'Répartition des offres d\'emploi'
+		            }
+		        },
+		        tooltip: {
+		            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+		            shared: true
+		        },
+		        plotOptions: {
+		            column: {
+		                stacking: 'percent'
+		            }
+		        },
+		        series: [{
+		            name: '0-1',
+		            data: [21, 33, 42, 23]
+		        }, {
+		            name: '2-5',
+		            data: [37, 37, 32, 28]
+		        }, {
+		            name: '6-10',
+		            data: [25, 17, 14, 23]
+						}, {
+		            name: '10+',
+		            data: [16, 13, 12, 26]
+						}, {
+		            name: 'NSP',
+		            data: [1, 0, 0, 0]
+		        }]
+		    });
+		});
+
+		</script>
 
 	</head>
 
 	<body>
+		<script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="http://code.highcharts.com/modules/funnel.js"></script>
+
 
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-			
+
 			<section>
 				<h1 class="gros-margin-bottom blue">Et la <font class="pink">diversité</font> dans tout ça?</h1>
-				<div>					
+				<div>
 			    	<img id="logoWit" src="img/wit.png">
 					<p class="uppercase">Women In Technology</p>
 				</div>
 			</section>
-	
+
 			<section class="stack">
 				<section data-background="#A4A4A4" >
 					<h1 class="titre-transition">Qui sommes-nous ?</h1>
@@ -69,7 +121,7 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 					</aside>
 				</section>
 			</section>
-			
+
 			<section class="stack">
 				<section data-background="#A4A4A4" >
 					<h1 class="titre-transition">La Diversité ?</h1>
@@ -78,7 +130,7 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
         		<!--<section>
 					<img src="img/beneton.JPG" height="600px">
         		</section>-->
-				
+
 					<img src="img/litle_poney.jpg" height="600px">
         		</section>
 
@@ -130,14 +182,14 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 						        "percent": 19
 						    }],
 						    "valueField": "percent",
-						    "titleField": "raison"							
+						    "titleField": "raison"
 						});
 					}, false );
-					
+
 					</script>
 					<aside class="notes">
 <small>
-			          	Principaux critères de discrimination cités par les victimes 
+			          	Principaux critères de discrimination cités par les victimes
 					<ul><li>le sexe (31%, + 9 points)</li>
 					<li>l’origine ethnique (27%, +10 points)</li>
 					<li>la grossesse (20%)</li>
@@ -147,13 +199,13 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 			          <p>40% des victimes de discrimination ne disent rien, parce qu’elles pensent que cela  n’aurait rien changé (donnée stable).</p></small>
 		        </section>
 			</section>
-			
+
 			<section class="stack">
 				<section data-background="#A4A4A4" >
 					<h1 class="titre-transition">Pourquoi ?</h1>
 <img src="img/pourquoi.jpg"/>
 				</section>
-				
+
 				<section>
 					<h2 class="pink uppercase">D'hier à aujourd'hui</h2>
 					<ul class="blue">
@@ -169,115 +221,13 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 						</ul>
 					</aside>
 				</section>
-				
+
 				<section data-state="jeunisme">
 					<h2 class="pink uppercase">Recrutements et jeunisme</h2>
-				<div id="chartdiv2"></div>
-					<script type="text/javascript">
-					Reveal.addEventListener( 'jeunisme', function() {
-					    var chart = AmCharts.makeChart("chartdiv2", {
-						"type": "serial",
-						"theme": "light",
-						"legend": {
-							"horizontalGap": 10,
-							"maxColumns": 1,
-							"position": "right",
-							"useGraphSettings": true,
-							"markerSize": 10
-						},
-						"dataProvider": [{
-							"year": 2011,
-							"0-1": 21,
-							"2-5": 37,
-							"6-10": 25,
-							"10+": 16,
-							"NSP": 1,
-						}, {
-							"year": 2012,
-							"0-1": 33,
-							"2-5": 37,
-							"6-10": 17,
-							"10+": 13,
-							"NSP": 0,
-						}, {
-							"year": 2013,
-							"0-1": 42,
-							"2-5": 32,
-							"6-10": 14,
-							"10+": 12,
-							"NSP": 0,
-						}, {
-							"year": "Tous secteurs (2013)",
-							"0-1": 23,
-							"2-5": 28,
-							"6-10": 23,
-							"10+": 26,
-							"NSP": 0,
-						}],
-						"valueAxes": [{
-							"stackType": "regular",
-							"axisAlpha": 0,
-							"gridAlpha": 0
-						}],
-						"graphs": [{
-							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-							"fillAlphas": 0.8,
-							"labelText": "[[value]]",
-							"lineAlpha": 0.3,
-							"title": "0 à 1 an",
-							"type": "column",
-							"color": "#000000",
-							"valueField": "0-1"
-						}, {
-							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-							"fillAlphas": 0.8,
-							"labelText": "[[value]]",
-							"lineAlpha": 0.3,
-							"title": "2 à 5 ans",
-							"type": "column",
-							"color": "#000000",
-							"valueField": "2-5"
-						}, {
-							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-							"fillAlphas": 0.8,
-							"labelText": "[[value]]",
-							"lineAlpha": 0.3,
-							"title": "6 à 10 ans",
-							"type": "column",
-							"color": "#000000",
-							"valueField": "6-10"
-						}, {
-							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-							"fillAlphas": 0.8,
-							"labelText": "[[value]]",
-							"lineAlpha": 0.3,
-							"title": "Plus de 10 ans",
-							"type": "column",
-							"color": "#000000",
-							"valueField": "10+"
-						}, {
-							"balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
-							"fillAlphas": 0.8,
-							"labelText": "[[value]]",
-							"lineAlpha": 0.3,
-							"title": "Ne se prononce pas",
-							"type": "column",
-							"color": "#000000",
-							"valueField": "NSP"
-						}],
-						"categoryField": "year",
-						"categoryAxis": {
-							"gridPosition": "start",
-							"axisAlpha": 0,
-							"gridAlpha": 0,
-							"position": "left"
-						}
-					});
-					}, false );
-					
-					</script>
+					<div id="chartDiv2" style="min-width: 410px; max-width: 800px; height: 600px; margin: 0 auto">
+
 				</section>
-				
+
 				<section>
 					<h2 class="pink uppercase">Enjeux sociaux et RH</h2>
 				<!--	<img src="img/enjeuxSociaux.png"/>-->
@@ -287,8 +237,8 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 	<li ><font class="pink">Développement</font> international et <font class="pink">ouverture</font> de marchés</li>
 	<li >Détection et gestion des <font class="pink">talents</font></li>
 </ul>
-					<aside class="notes">		
-<small>					
+					<aside class="notes">
+<small>
 						<ul class="blue">
 							<li >Pallier à une <font class="pink">pénurie</font> de compétences</li>
 							<li><font class="pink">Renouvellement et enrichissement</font> des ressources humaines présentes</li>
@@ -299,10 +249,10 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 </small>
 					</aside>
 				</section>
-				
+
 				<section>
 					<h2 class="pink uppercase">Intérêts économiques et impacts commerciaux</h2>
-					
+
 					<ul class="blue">
 						<li >La diversité augmenterait la rentabilité de <font class="pink">5 à 15%</font></li>
 						<li >Elle permet d'accroitre la <font class="pink">qualité de la main d’œuvre</font> en attirant le plus de profils d'origines diverses</li>
@@ -328,26 +278,26 @@ Meilleure identification des besoins
 				<section>
 					<h2 class="pink uppercase">Cas des startups ! </h2>
 					<img src="img/pinky_pie.png" height="600px">
-					<aside class="notes"> 
+					<aside class="notes">
 						Dire qu'on a besoin de l'unité au début car il faut aller dans le même sens.
 						Cependant, il est important de penser à introduire la diversité rapidement.
 					</aside>
 				</section>
-			</section>				
-	
+			</section>
+
 			<section class="stack">
 				<section data-background="#A4A4A4" >
 					<h1 class="titre-transition">Comment ?</h1>
 					<img src="img/comment poney" heigh="600px">
-				</section>				
-			
-					
-			
+				</section>
+
+
+
 				<section>
 					<h2 class="pink uppercase">Lors du recrutement</h2>
 					<img src="img/team poney.jpeg" heigh="600px">
 				</section>
-			
+
 				<section>
 					<h2 class="pink uppercase">Quelques exemples</h2>
 					<ul class="blue">
@@ -359,34 +309,34 @@ Meilleure identification des besoins
 <aside class="notes">CV anonyme (Loi du 31 mars 2006 pour l'égalité des chances) pour les entreprises de plus de 50 salariés. Abrogée par le gouvernement actuel</aside>
 				</section>
 
-				
+
 				<section>
 					<h2 class="pink uppercase">Dans l'entreprise</h2>
 					<img src="img/pony_factory.jpg" heigh="600px">
 				</section>
-			
+
 				<section>
 					<h2 class="pink uppercase">Charte de la Diversité</h2>
-			
+
 					<p class="blue">Texte d'engagement proposé à la signature de toute entreprise, quelle que soit sa taille, qui condamne les discriminations dans le domaine de l'emploi et décide d'œuvrer en faveur de la diversité.</p>
-			
+
 					<small><a style="color:white; text-align:right;" href="http://www.charte-diversite.com">http://www.charte-diversite.com</a></small>
-		
+
 					<aside class="notes">
 						Quelques signataires dans l'IT en Pays de la Loire : ADN'Ouest, ASI Informatique, NeoSoft<br>
 						(Je n'ai rien trouvé en Bretagne dans l'IT)<br/>
 						Au niveau national : Bouygues Telecom, Alcatel-Lucent, Orange, SII Strasbourg, Ippon Technologies, Zenika, Norsys
 					</aside>
-				</section>			
+				</section>
 
 				<section>
 					<h2 class="pink uppercase">Législation française</h2>
 					<ul class="blue">
 						<li >Le <font class="pink">Défenseur des Droits</font> (anciennement Halde)
-						
+
 						</li>
 						<li >
-							<font class="pink">Quota</font> de salariés handicapés dans les entreprises de plus de 20 employés 
+							<font class="pink">Quota</font> de salariés handicapés dans les entreprises de plus de 20 employés
 						</li>
 						<li ><font class="pink">Représentation équilibrée</font> des femmes et des hommes dans les conseils d'administration</li>
 						<li >Toutes les actions en cours pour l'<font class="pink">égalité homme / femme</font> (congés parentaux, etc)</li>
@@ -399,13 +349,13 @@ Meilleure identification des besoins
 						<li>(loi n° 2011-103 du 27 janvier 2011)</li>
 					</aside>
 				</section>
-				
+
 				<section>
 					<h2 class="pink uppercase">Quelques actions en Europe</h2>
 						<ul class="blue">
 							<li>Label <font class="pink">Egalité et Diversité</font> en Belgique</li>
 							<li>Aide pour des <font class="pink">plans diversités</font> dans les entreprises en Belgique</li>
-							<li>En Grande-Bretagne, en 2004, <font class="pink">plan d'action en 10 points</font> visant à augmenter la présence de groupes cibles </li>				
+							<li>En Grande-Bretagne, en 2004, <font class="pink">plan d'action en 10 points</font> visant à augmenter la présence de groupes cibles </li>
 							<li>En Suède, un organe est spécialement chargé des questions de <font class="pink">discrimination raciale</font>. </li>
 						</ul>
 
@@ -423,8 +373,8 @@ Meilleure identification des besoins
 				<section data-background="#A4A4A4" >
 					<h1 class="titre-transition">Actions pour une égalité <br/>professionnelle</h1>
 					<img src="img/equal poney.jpg" heigh="600px">
-				</section>				
-				
+				</section>
+
 				<section>
 					<h2 class="pink uppercase">Actions pour une égalité professionnelle</h2>
 
@@ -438,7 +388,7 @@ Meilleure identification des besoins
 					</ul>
 
 
-					
+
 					<aside class="notes"><small>
 						<ul>
 						<li>
@@ -454,10 +404,10 @@ Meilleure identification des besoins
 					</small></aside>
 				</section>
 			</section>
-				
-				
+
+
 			<section class="stack">
-			
+
 				<section data-background="#A4A4A4" >
 					<h1 class="titre-transition">Des exemples<br/> concrets</h1>
 				</section>
@@ -466,25 +416,25 @@ Meilleure identification des besoins
 					<img src="img/pony_google.png" width="800px">
 					<a href="http://www.google.com/diversity/">http://www.google.com/diversity/</a>
 					<!-- source : http://thepatrollpl.deviantart.com/art/Fluttershy-Google-Logo-Install-guide-366725979-->
-					<aside class="notes"> 
+					<aside class="notes">
 						Ils ont anonymisé leur process à fond ! le comité final de sélection n'a accès qu'aux évaluations et au fait qu'il ait un diplome Bac+5 etc...
 						Ils ont ainsi augmenté de près de 30% leur diversité
 					</aside>
 				</section>
-				
+
 				<section>
 					<img src="img/SFR.png" width="600px">
-					<aside class="notes"> 
+					<aside class="notes">
 						Le principe est simple ! à compétences égales, les femmes seront favorisées ! Idem, ils vont chercher eux-mêmes les filles pour leur proposer
 						des augmentations.
 					</aside>
 				</section>
-				
+
 				<section>
 					<img src="img/norsys.jpg" width="600px">
 					<aside class="notes"><small>
 					la SSII Norsys (250 salariés, 22 M€ de chiffre d’affaires) <br/>
-					Généralisation CV anonyme depuis 2006 => diversification des profils en 5 ans: 
+					Généralisation CV anonyme depuis 2006 => diversification des profils en 5 ans:
 					<ul><li>part femmes dans l’entreprise a plus que doublé (de 10 % à 24 %)</li>
 					<li>part salariés âgés de plus de 40 ans est passée de 8 % à 14 %<li>
 <li> part des plus de 50 ans de 0,5 % à 4 %</li>
@@ -495,45 +445,45 @@ Comment ?<br/>
 					Chaque candidat est convoqué à plusieurs entretiens avec différents responsables, qui échangent ensuite leurs points de vue et prennent la décision de manière collégiale afin d’éviter, là encore, un jugement trop personnel et subjectif
 					 </small>
 					</aside>
-				</section>											
+				</section>
 			</section>
-			
+
 			<section class="stack">
 				<section data-background="#A4A4A4" >
 					<h1 class="titre-transition">Actions au niveau individuel</h1>
 					<img src="img/superHero poney.jpg" width="500px">
 				</section>
-				
+
 				<section>
 					<h3 class="blue">Ce sont souvent de petites choses qui renforcent les <font class="pink">stéréotypes</font></h3>
 				</section>
-				
+
 				<section>
 					<h3 class="blue">Etre attentif à sa <font class="pink">manière de communiquer</font></h3>
 				</section>
-				
+
 				<section>
 					<h3 class="blue"><font class="pink">Apprendre</font> à dire "pardon"</h3>
 				</section>
-				
+
 				<section>
 					<h3 class="blue">Ne plus rester <font class="pink">silencieux</font></h3>
 				</section>
-				
+
 			</section>
-			
+
 			<section>
 				<h1 class="gros-margin-bottom blue">Merci !</h1>
 				<img src="img/pony_cool.png" height="500px">
 			</section>
-			
+
 			<section class="stack">
-			
+
 				<section>
 					<h1 class="gros-margin-bottom blue">Références</h1>
 					<img src="img/poney reading.jpg" width="800px">
 				</section>
-				
+
 				<section>
 					<ul class="blue">
 						<li>Munci : <a href="http://munci.org">http://munci.org</a></li>
@@ -546,7 +496,7 @@ Comment ?<br/>
 					</ul>
 				</section>
 			</section>
-			
+
 			<section data-background="#A4A4A4" >
 				<p><img src="img/wit.png"/></p>
 				<p>Twitter : <a href="https://twitter.com/nanteswit">@NantesWIT</a></p>
@@ -560,7 +510,7 @@ Comment ?<br/>
 
 		</div>
 
-		
+
 
 		<script>
 

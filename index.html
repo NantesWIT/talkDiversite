@@ -35,64 +35,21 @@
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.min.js"></script>
 		<script type="text/javascript" src="js/chart/amcharts.js"></script>
-		<script type="text/javascript" src="http://www.amcharts.com/lib/3/serial.js"></script>
+		<script type="text/javascript" src="js/chart/serial.js"></script>
 		<script type="text/javascript" src="js/chart/pie.js"></script>
 		<script type="text/javascript" src="js/chart/light.js"></script>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/chart/jquery.min.js"></script>
 
 		<script type="text/javascript">
-		$(function () {
-		    $('#chartDiv2').highcharts({
-		        chart: {
-		            type: 'column'
-		        },
-		        title: {
-		            text: 'Recrutement et jeunisme'
-		        },
-		        xAxis: {
-		            categories: ['2011', '2012', '2013', 'Tous secteurs (2013)']
-		        },
-		        yAxis: {
-		            min: 0,
-		            title: {
-		                text: 'Répartition des offres d\'emploi'
-		            }
-		        },
-		        tooltip: {
-		            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
-		            shared: true
-		        },
-		        plotOptions: {
-		            column: {
-		                stacking: 'percent'
-		            }
-		        },
-		        series: [{
-		            name: '0-1',
-		            data: [21, 33, 42, 23]
-		        }, {
-		            name: '2-5',
-		            data: [37, 37, 32, 28]
-		        }, {
-		            name: '6-10',
-		            data: [25, 17, 14, 23]
-						}, {
-		            name: '10+',
-		            data: [16, 13, 12, 26]
-						}, {
-		            name: 'NSP',
-		            data: [1, 0, 0, 0]
-		        }]
-		    });
-		});
+		
 
 		</script>
 
 	</head>
 
 	<body>
-		<script src="http://code.highcharts.com/highcharts.js"></script>
-		<script src="http://code.highcharts.com/modules/funnel.js"></script>
+		<script src="js/chart/highcharts.js"></script>
+		<script src="js/chart/funnel.js"></script>
 
 
 		<div class="reveal">
@@ -109,7 +66,7 @@
 			</section>
 
 			<section class="stack">
-				<section data-background="#A4A4A4" >
+				<section data-background="#7CB5EC" >
 					<h1 class="titre-transition">Qui sommes-nous ?</h1>
 				</section>
 				<section>
@@ -117,13 +74,13 @@
 					<img src="img/nosActions.png">
 					<aside class="notes">
 					Nous sommes les WIT pour Women In Technology, un user group genre Duchess version Nantaise
-Mettre en avant des modèles féminins pour montrer que c'est possible et encourager les autres femmes. Favoriser les échanges'
+Mettre en avant des modèles féminins pour montrer que c'est possible et encourager les autres femmes. Favoriser les échanges
 					</aside>
 				</section>
 			</section>
 
 			<section class="stack">
-				<section data-background="#A4A4A4" >
+				<section data-background="#7CB5EC" >
 					<h1 class="titre-transition">La Diversité ?</h1>
 
         		<!-- Choisir une des 2 images....-->
@@ -201,7 +158,7 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 			</section>
 
 			<section class="stack">
-				<section data-background="#A4A4A4" >
+				<section data-background="#7CB5EC" >
 					<h1 class="titre-transition">Pourquoi ?</h1>
 <img src="img/pourquoi.jpg"/>
 				</section>
@@ -225,7 +182,52 @@ Mettre en avant des modèles féminins pour montrer que c'est possible et encour
 				<section data-state="jeunisme">
 					<h2 class="pink uppercase">Recrutements et jeunisme</h2>
 					<div id="chartDiv2" style="min-width: 410px; max-width: 800px; height: 600px; margin: 0 auto">
-
+					<script type="text/javascript">
+					Reveal.addEventListener( 'jeunisme', function() {
+		    $('#chartDiv2').highcharts({
+		        chart: {
+		            type: 'column'
+		        },
+		        title: {
+		            text: 'Recrutement et jeunisme'
+		        },
+		        xAxis: {
+		            categories: ['2011', '2012', '2013', 'Tous secteurs (2013)']
+		        },
+		        yAxis: {
+		            min: 0,
+		            title: {
+		                text: 'Répartition des offres d\'emploi'
+		            }
+		        },
+		        tooltip: {
+		            pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+		            shared: true
+		        },
+		        plotOptions: {
+		            column: {
+		                stacking: 'percent'
+		            }
+		        },
+		        series: [{
+		            name: '0-1',
+		            data: [21, 33, 42, 23]
+		        }, {
+		            name: '2-5',
+		            data: [37, 37, 32, 28]
+		        }, {
+		            name: '6-10',
+		            data: [25, 17, 14, 23]
+						}, {
+		            name: '10+',
+		            data: [16, 13, 12, 26]
+						}, {
+		            name: 'NSP',
+		            data: [1, 0, 0, 0]
+		        }]
+		    });
+		});
+</script>
 				</section>
 
 				<section>
@@ -286,7 +288,7 @@ Meilleure identification des besoins
 			</section>
 
 			<section class="stack">
-				<section data-background="#A4A4A4" >
+				<section data-background="#7CB5EC" >
 					<h1 class="titre-transition">Comment ?</h1>
 					<img src="img/comment poney" heigh="600px">
 				</section>
@@ -370,7 +372,7 @@ Meilleure identification des besoins
 
 				</section>
 
-				<section data-background="#A4A4A4" >
+				<section data-background="#7CB5EC" >
 					<h1 class="titre-transition">Actions pour une égalité <br/>professionnelle</h1>
 					<img src="img/equal poney.jpg" heigh="600px">
 				</section>
@@ -408,7 +410,7 @@ Meilleure identification des besoins
 
 			<section class="stack">
 
-				<section data-background="#A4A4A4" >
+				<section data-background="#7CB5EC" >
 					<h1 class="titre-transition">Des exemples<br/> concrets</h1>
 				</section>
 
@@ -449,7 +451,7 @@ Comment ?<br/>
 			</section>
 
 			<section class="stack">
-				<section data-background="#A4A4A4" >
+				<section data-background="#7CB5EC" >
 					<h1 class="titre-transition">Actions au niveau individuel</h1>
 					<img src="img/superHero poney.jpg" width="500px">
 				</section>
@@ -497,7 +499,7 @@ Comment ?<br/>
 				</section>
 			</section>
 
-			<section data-background="#A4A4A4" >
+			<section data-background="#7CB5EC" >
 				<p><img src="img/wit.png"/></p>
 				<p>Twitter : <a href="https://twitter.com/nanteswit">@NantesWIT</a></p>
 				<p>Google Group : <a href="https://groups.google.com/forum/#!forum/nantes-wit">nantes-wit</a></p>
@@ -517,8 +519,8 @@ Comment ?<br/>
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
-				controls: true,
-				progress: true,
+				controls: false,
+				progress: false,
 				history: true,
 				center: true,
 
